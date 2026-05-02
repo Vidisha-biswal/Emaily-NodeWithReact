@@ -5,15 +5,38 @@ const mongoose=require('mongoose');
 
 const User=mongoose.model('users');
 
+passport.serializeUser((user,done)=>{
+    done(null,user.id);
+});
+
+passport.deserializeUser((id,done)=>{
+    User.findById(id)
+        .then(user=>{
+            done(null,user); 
+    });
+});
+
 passport.use(
     new GoogleStrategy({
         clientID:keys.googleClientID,
         clientSecret:keys.googleClientSecret,
         callbackURL:'/auth/google/callback'
     }, (accessToken,refreshToken,profile,done)=>{
-        console.log('access Token:',accessToken);
-        console.log('refresh token:',refreshToken);
-        console.log('profile: ',profile);
-        new User({ googleId:profile.id}).save();
+
+        User.findOne({googleId:profile.id})
+            .then((existingUser)=>{
+                if(existingUser)
+                {
+                    done(null,existingUser);
+                    //1st arg-> error obj which is null for now
+                    //2nd arg-> user record
+                }
+                else{
+                    //mongoose model instance
+                    new User({ googleId:profile.id})
+                        .save()
+                        .then(user=> done(null,user));
+                }
+            })
     })
 );
