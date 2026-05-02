@@ -13,10 +13,11 @@
   "scripts": {
     "start": "node index.js",
     "build": "npm install",
-    "dev":"nodemon index.js"
+    "dev": "nodemon index.js"
   },
   "dependencies": {
     "express": "^5.2.1",
+    "mongoose": "^9.6.1",
     "nodemon": "^3.1.14",
     "passport": "^0.5.3",
     "passport-google-oauth20": "^2.0.0"
