@@ -6,7 +6,7 @@ const keys=require('./config/keys');
 require('./models/User');
 require('./services/passport');
 
-mongoose.connect(keys.mongiURI);
+mongoose.connect(keys.mongoURI);
 
 const authRoutes=require('./routes/authRoutes');
 
