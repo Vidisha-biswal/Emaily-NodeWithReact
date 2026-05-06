@@ -13,9 +13,12 @@
   "scripts": {
     "start": "node index.js",
     "build": "npm install",
-    "dev": "nodemon index.js"
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
+    "concurrently": "^9.2.1",
     "cookie-session": "^2.1.1",
     "express": "^5.2.1",
     "mongoose": "^9.6.1",
