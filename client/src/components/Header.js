@@ -27,9 +27,6 @@ class Header extends Component{
                     </a>
                     <ul className='right'>
                         {this.renderContent()}
-                        {/*<li>
-                            <a href="www.google.com">Login with Google</a>
-                        </li>*/}
                     </ul> 
                 </div>
             </nav>
