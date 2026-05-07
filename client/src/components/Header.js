@@ -30,7 +30,7 @@ class Header extends Component{
                         {/*<li>
                             <a href="www.google.com">Login with Google</a>
                         </li>*/}
-                    </ul>
+                    </ul> 
                 </div>
             </nav>
         );
