@@ -2,14 +2,18 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://github.com/Vidisha-biswal/Emaily-NodeWithReact#readme",
+  "bugs": {
+    "url": "https://github.com/Vidisha-biswal/Emaily-NodeWithReact/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vidisha-biswal/Emaily-NodeWithReact.git"
+  },
   "license": "ISC",
   "author": "",
   "type": "commonjs",
   "main": "index.js",
-  "engines": {
-    "node": "20.x",
-    "npm": "5.0.3"
-  },
   "scripts": {
     "start": "node index.js",
     "build": "npm install",
@@ -25,5 +29,10 @@
     "nodemon": "^3.1.14",
     "passport": "^0.5.3",
     "passport-google-oauth20": "^2.0.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": "20.x",
+    "npm": "5.0.3"
   }
 }
