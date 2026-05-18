@@ -38,7 +38,7 @@ app.use(passport.session());
 authRoutes(app);
 billingRoutes(app);
 
-/*if(process.env.NODE_ENV==='production')
+if(process.env.NODE_ENV==='production')
 {
     app.use(express.static('client/build'));
     const path=require('path');
@@ -46,8 +46,8 @@ billingRoutes(app);
         res.sendFile(path.resolve(__dirname,'client','build','index.html'));
     });
 }
-    */
-   
+    /*
+
 // ✅ NEW FIXED CODE
 if (process.env.NODE_ENV === 'production') {
     const path = require('path');
@@ -60,6 +60,8 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }
+
+*/
 const PORT=process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
