@@ -6,7 +6,7 @@ class Mailer extends helper.Mail{
     constructor( { subject, recipients}, content){    
         super();
       this.sgApi=sendgrid(keys.sendGridKey);    
-      const senderEmail=keys.fromEmail || process.env.FROM_EMAIL || 'biswalvidisha31@gmail.com';
+      const senderEmail=keys.fromEmail || process.env.FROM_EMAIL;
 
       this.from_email= new helper.Email(senderEmail);    
       this.subject=subject;    
