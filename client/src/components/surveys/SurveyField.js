@@ -14,7 +14,6 @@ export default ({input,label,meta:{error,touched}}) => {
                     boxShadow: 'none'
                 }}
             />
-            {/* Using pre-line supports vertical line breaks for bad emails */}
             {error && touched && (
                 <div className="red-text text-darken-1" style={{ fontSize: '0.85rem', fontWeight: '500', whiteSpace: 'pre-line', marginTop: '2px' }}>
                     <i className="material-icons left" style={{ fontSize: '14px', marginRight: '4px', marginTop: '2px' }}>error_outline</i>
@@ -22,10 +21,5 @@ export default ({input,label,meta:{error,touched}}) => {
                 </div>
             )}
         </div>  
-        // <div>
-        //     <label>{label}</label>
-        //     <input {...input} style={{marginBottom:'5px'}}/>
-        //     {error && touched && <span className="red-text" style={{marginBottom:'20px'}}>{error}</span>}
-        // </div>
     );
 }   

@@ -14,7 +14,6 @@ class SurveyNew extends Component{
         }
         return <SurveyForm onSurveySubmit={() => this.setState({showFormReview: true})} />;
     }
-    // Suggested layout wrappers inside your SurveyNew render method:
 render(){
      return (
          <div className="container" style={{ marginTop: '40px', marginBottom: '40px' }}>
@@ -25,13 +24,6 @@ render(){
      );
 };
 
-//     render(){
-//          return (
-//      <div>
-//      {this.renderContent()}
-//  </div>
-//  );
-//  };
 }
  export default reduxForm({
     form: 'surveyForm'

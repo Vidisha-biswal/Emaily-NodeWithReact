@@ -15,11 +15,9 @@ class SurveyForm extends Component{
             );
         });
     } 
-    // Suggested style enhancements inside your SurveyForm render method:
 render(){
     return (
         <div>
-            {/* Added a clear, welcoming view header */}
             <h4 className="blue-grey-text text-darken-4" style={{ fontWeight: '700', marginBottom: '30px' }}>
                 <i className="material-icons left teal-text">create_new_folder</i>Create New Survey
             </h4>
@@ -41,22 +39,6 @@ render(){
     );
 };
   
-    // render(){
-    //     return (
-    //         <div>
-    //             <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
-    //                 {this.renderFields()}
-    //                 <Link to="/surveys" className="brown btn-flat left white-text">
-    //                     Cancel
-    //                 </Link>
-    //                 <button type="submit" className="teal btn-flat right white-text">
-    //                     Next
-    //                     <i className="material-icons right">done</i>
-    //                 </button>
-    //             </form>
-    //         </div>
-    //     );
-    // };
 }
 function validate(values){
     const errors = {};

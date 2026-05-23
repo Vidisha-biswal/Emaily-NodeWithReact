@@ -52,21 +52,6 @@ if(process.env.NODE_ENV==='production')
         res.sendFile(path.resolve(__dirname,'client','build','index.html'));
     });
 }
-    /*
-
-// ✅ NEW FIXED CODE
-if (process.env.NODE_ENV === 'production') {
-    const path = require('path');
-   
-    // Express will serve production assets like main.js or main.css
-    app.use(express.static(path.join(__dirname, 'client', 'build')));
-
-    // Express will serve the index.html file if it doesn't recognize the route
-    // app.get('/:path*', (req, res) => {
-    app.get(/^(?!\/api).*$/, (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-    });
-}*/
 
 const PORT=process.env.PORT || 5000;
 app.listen(PORT, () => {

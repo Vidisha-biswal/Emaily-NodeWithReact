@@ -2,7 +2,6 @@ import React from 'react';
 
 const Landing = () => {
     return (
-        // Suggested style updates to replace your current text containers inside Landing:
 <div style={{ textAlign: 'center', padding: '80px 10px 40px 10px' }}>
     <h1 className="blue-grey-text text-darken-4" style={{ fontWeight: '800', letterSpacing: '-1px' }}>Emaily!</h1>
     <h5 className="brown-text text-lighten-1" style={{ fontWeight: '400', letterSpacing: '0.5px' }}>Collect feedback from your users effortlessly</h5>

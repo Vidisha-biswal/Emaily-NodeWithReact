@@ -17,7 +17,6 @@ class Header extends Component{
                 return [
                     <li key="1"><Payments /></li>,
                     <li key='3' style={{margin:'0 15px'}}>
-                        {/* Credits:{this.props.auth.credits} */}
                         <span className="new badge grey lighten-2 black-text font-weight-bold" data-badge-caption="" style={{ padding: '0 12px', borderRadius: '4px', fontSize: '17px', verticalAlign: 'middle' }}>
                             💳 Credits: {this.props.auth.credits}
                         </span>
