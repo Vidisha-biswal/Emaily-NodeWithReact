@@ -14,23 +14,49 @@ class SurveyForm extends Component{
                 <Field key={name} component={SurveyField} type="text" label={label} name={name}/>
             );
         });
-    }   
-    render(){
-        return (
-            <div>
-                <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
-                    {this.renderFields()}
-                    <Link to="/surveys" className="brown btn-flat left white-text">
-                        Cancel
+    } 
+    // Suggested style enhancements inside your SurveyForm render method:
+render(){
+    return (
+        <div>
+            {/* Added a clear, welcoming view header */}
+            <h4 className="blue-grey-text text-darken-4" style={{ fontWeight: '700', marginBottom: '30px' }}>
+                <i className="material-icons left teal-text">create_new_folder</i>Create New Survey
+            </h4>
+            
+            <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
+                {this.renderFields()}
+                
+                <div style={{ marginTop: '40px', overflow: 'hidden' }}>
+                    <Link to="/surveys" className="brown lighten-1 btn waves-effect waves-light left white-text z-depth-0" style={{ borderRadius: '4px', textTransform: 'none' }}>
+                        <i className="material-icons left">arrow_back</i>Cancel
                     </Link>
-                    <button type="submit" className="teal btn-flat right white-text">
+                    <button type="submit" className="teal btn waves-effect waves-light right white-text z-depth-0" style={{ borderRadius: '4px', textTransform: 'none' }}>
                         Next
-                        <i className="material-icons right">done</i>
+                        <i className="material-icons right">arrow_forward</i>
                     </button>
-                </form>
-            </div>
-        );
-    };
+                </div>
+            </form>
+        </div>
+    );
+};
+  
+    // render(){
+    //     return (
+    //         <div>
+    //             <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
+    //                 {this.renderFields()}
+    //                 <Link to="/surveys" className="brown btn-flat left white-text">
+    //                     Cancel
+    //                 </Link>
+    //                 <button type="submit" className="teal btn-flat right white-text">
+    //                     Next
+    //                     <i className="material-icons right">done</i>
+    //                 </button>
+    //             </form>
+    //         </div>
+    //     );
+    // };
 }
 function validate(values){
     const errors = {};
