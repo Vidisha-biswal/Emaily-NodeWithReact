@@ -16,21 +16,25 @@ class Header extends Component{
             default:
                 return [
                     <li key="1"><Payments /></li>,
-                    <li key='3' style={{margin:'0 10px'}}>
-                        Credits:{this.props.auth.credits}
+                    <li key='3' style={{margin:'0 15px'}}>
+                        {/* Credits:{this.props.auth.credits} */}
+                        <span className="new badge grey lighten-2 black-text font-weight-bold" data-badge-caption="" style={{ padding: '0 12px', borderRadius: '4px', fontSize: '17px', verticalAlign: 'middle' }}>
+                            💳 Credits: {this.props.auth.credits}
+                        </span>
                     </li>,
-                    <li key="2"><a href='/api/logout'>Logout</a></li>
+                    <li key="2"><a href='/api/logout' className="grey-text text-lighten-2"><i className="material-icons right">exit_to_app</i>Logout</a></li>
                 ];
         }
     }
     render(){
-        console.log("props"+this.props);
         return (
-            <nav>
+            <nav className="blue-grey darken-4 z-depth-1" style={{ padding: '0 20px' }}>
                 <div className='nav-wrapper'>
                     <Link 
-                        to={this.props.auth ? '/surveys' : '/'} 
-                        className='left brand-logo' >
+                        to='/'
+                        className='left brand-logo  white-text font-weight-bold'
+                        style={{ letterSpacing: '-0.5px' }}>
+                        <i className="material-icons left hide-on-small-only">mail_outline</i>
                         Emaily
                     </Link>
                     <ul className='right'>
