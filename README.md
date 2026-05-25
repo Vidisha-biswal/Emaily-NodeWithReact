@@ -40,7 +40,7 @@ Follow these steps to configure and run the full-stack development environment o
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com
-cd emaily-fullstack
+cd emaily_SaaS
 ```
 
 ### 2. Install Project Dependencies
@@ -51,7 +51,8 @@ npm install && npm install --prefix client
 
 ### 3. Setup Local Environment Configurations
 Create a `dev.js` configuration file inside your server's config directory:
-`server/config/dev.js`
+`config/dev.js`
+
 
 ```javascript
 module.exports = {
@@ -66,7 +67,16 @@ module.exports = {
 };
 ```
 
-### 4. Boot Up Both Development Servers
+### 4. Configure Your Webhook Tunnel (ngrok)
+Because SendGrid needs to communicate clicks back to your local server on port 5000, spin up an ngrok tunnel in a separate terminal:
+```bash
+npm install -g ngrok
+ngrok http 5000
+```
+Copy your active forwarding `.dev` or `.app` secure URL and paste it into your SendGrid **Event Webhook** settings dashboard as the endpoint:
+`https://YOUR_TUNNEL_ID.ngrok-free.dev/api/surveys/webhooks`
+
+### 5. Boot Up Both Development Servers
 Execute the concurrent start script from the project root directory to launch the Node backend and React frontend simultaneously:
 ```bash
 npm run dev
@@ -77,6 +87,6 @@ Open your browser and navigate to `http://localhost:3000`.
 
 ## 🌐 Production Deployment (Render)
 
-This application is fully optimized for containerized cloud deployment on Render:
-1. Ensure your root `index.js` file handles static asset path routing via `path.join(__dirname, 'client', 'build')`.
-2. Configure all relevant variables (`MONGO_URI`, `SEND_GRID_KEY`, `NODE_ENV=production`, etc.) inside your Render service dashboard.
+This application is fully optimized for cloud deployment on Render:
+1. The root configuration utilizes custom Express middleware logic to safely isolate backend routing definitions from the React production static build folder pathway (`client/build`).
+2. Add your production environment settings directly within the Render service **Environment** dashboard tab, ensuring `NODE_ENV` is set to `production` and mapping your dynamic cloud `REDIRECT_DOMAIN` directly to your production URL.
