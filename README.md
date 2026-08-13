@@ -2,7 +2,7 @@
 
 Emaily is a full-stack Software-as-a-Service (SaaS) application that allows users to create, deploy, and track mass email surveys. The application features a secure user authentication loop, an integrated credit-based payment gateway, custom automated email campaigns, and real-time webhook tracking.
 
-🌐 **Live Demo:** [Emaily App](https://emaily-nodewithreact.onrender.com)  
+🌐 **Live Demo:** [Emaily App](https://emaily-saasmanagement-rako85nvg-work-lab.vercel.app/)  
 
 ---
 
